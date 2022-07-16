@@ -86,6 +86,30 @@ public class Grid : MonoBehaviour
   public  void GridChecker(Slot slot) //Checks slots for ai and checks for the victory
     {
         Counter++;
+        if (SlotsA1.SE == SlotsA3.SE && SlotsA1.SE != Slot.Selection.Nothing && SlotsA3.SE != Slot.Selection.Nothing) //checks for empty slots in the middle of two extremities for the ai to stop them
+        {
+            FillSlot(SlotsA2, false);
+        }
+        if (SlotsB1.SE == SlotsB3.SE && SlotsB1.SE != Slot.Selection.Nothing && SlotsB3.SE != Slot.Selection.Nothing)//checks for empty slots in the middle of two extremities for the ai to stop them
+        {
+            FillSlot(SlotsB2, false);
+        }
+        if (SlotsC1.SE == SlotsC3.SE && SlotsC1.SE != Slot.Selection.Nothing && SlotsC3.SE != Slot.Selection.Nothing)//checks for empty slots in the middle of two extremities for the ai to stop them
+        {
+            FillSlot(SlotsC2, false);
+        }
+        if (SlotsA1.SE == SlotsC1.SE && SlotsA1.SE != Slot.Selection.Nothing && SlotsC1.SE != Slot.Selection.Nothing)//checks for empty slots in the middle of two extremities for the ai to stop them
+        {
+            FillSlot(SlotsB1, false);
+        }
+        if (SlotsA2.SE == SlotsC2.SE && SlotsA2.SE != Slot.Selection.Nothing && SlotsC2.SE != Slot.Selection.Nothing)//checks for empty slots in the middle of two extremities for the ai to stop them
+        {
+            FillSlot(SlotsB2, false);
+        }
+        if (SlotsA3.SE == SlotsC3.SE && SlotsA3.SE != Slot.Selection.Nothing && SlotsC3.SE != Slot.Selection.Nothing)//checks for empty slots in the middle of two extremities for the ai to stop them
+        {
+            FillSlot(SlotsB3, false);
+        }
         if (SlotsB2.SE == Slot.Selection.Nothing)
         {
             FillSlot(SlotsB2, false);
@@ -401,30 +425,7 @@ public class Grid : MonoBehaviour
 
             }
         }
-        if (SlotsA1.SE == SlotsA3.SE && SlotsA1.SE != Slot.Selection.Nothing && SlotsA3.SE != Slot.Selection.Nothing) //checks for empty slots in the middle of two extremities for the ai to stop them
-        {
-            FillSlot(SlotsA2, false);
-        }
-        if (SlotsB1.SE == SlotsB3.SE && SlotsB1.SE != Slot.Selection.Nothing && SlotsB3.SE != Slot.Selection.Nothing)//checks for empty slots in the middle of two extremities for the ai to stop them
-        {
-            FillSlot(SlotsB2, false);
-        }
-        if (SlotsC1.SE == SlotsC3.SE && SlotsC1.SE != Slot.Selection.Nothing && SlotsC3.SE != Slot.Selection.Nothing)//checks for empty slots in the middle of two extremities for the ai to stop them
-        {
-            FillSlot(SlotsC2, false);
-        }
-        if (SlotsA1.SE == SlotsC1.SE && SlotsA1.SE != Slot.Selection.Nothing && SlotsC1.SE != Slot.Selection.Nothing)//checks for empty slots in the middle of two extremities for the ai to stop them
-        {
-            FillSlot(SlotsB1, false);
-        }
-        if (SlotsA2.SE == SlotsC2.SE && SlotsA2.SE != Slot.Selection.Nothing && SlotsC2.SE != Slot.Selection.Nothing)//checks for empty slots in the middle of two extremities for the ai to stop them
-        {
-            FillSlot(SlotsB2, false);
-        }
-        if (SlotsA3.SE == SlotsC3.SE && SlotsA3.SE != Slot.Selection.Nothing && SlotsC3.SE != Slot.Selection.Nothing)//checks for empty slots in the middle of two extremities for the ai to stop them
-        {
-            FillSlot(SlotsB3, false);
-        }
+       
         if(SlotsB2.SE == Slot.Selection.Circle && SlotsA1.SE == Slot.Selection.Cross)
         {
 
