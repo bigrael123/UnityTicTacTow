@@ -515,15 +515,21 @@ public class Grid : MonoBehaviour
                 Debug.Log("Turn");
                 if (Slots[i].SE == Slot.Selection.Nothing)
                 {
-                    checkallslots += 1;
+                    Debug.Log(checkallslots);
                     FillSlot(Slots[i], false);
                     
 
                 }
-                
-                
+                if (Slots[i].SE == Slot.Selection.Nothing)
+                {
+                    checkallslots += 1;
 
-                
+
+
+                }
+
+
+
             }
             Debug.Log(checkallslots);
             if (checkallslots == 0) // Checks if there is a drawn
